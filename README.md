@@ -58,9 +58,12 @@ docker compose -f observability/compose.yaml up -d
 
 Work through feature branches and Pull Requests. `.github/workflows/ci.yml` validates the architecture contract, Compose configuration, builds the distributed stack and runs smoke tests before merge.
 
-## Academic ownership
+## Academic Ownership
 
-Design of Systems teams own frontend/backend product evolution. Software Development teams act as DevOps/Platform teams: Codespaces, CI/CD, containerization, integration readiness, observability and later DevSecOps security gates.
+This repository is maintained as part of a collaborative multi-team engineering architecture:
 
-See `docs/` for C4, data ownership, missions and incident runbooks.
+- **Design of Systems Teams:** Responsible for functional requirements, core domain logic, and frontend/backend product evolution.
+- **Software Development & DevOps/Platform Teams:** Responsible for infrastructure readiness, Codespaces environment, CI/CD pipelines, container orchestration, observability, and DevSecOps security gates.
+
+For detailed C4 diagrams, data ownership boundaries, team missions, and incident runbooks, check the [`docs/`](./docs) directory.
 
