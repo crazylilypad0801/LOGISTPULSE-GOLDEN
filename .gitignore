@@ -1,4 +1,6 @@
 .env
+contexto_proyecto.txt*
+*contexto_proyecto.txt*
 __pycache__/
 *.pyc
 .pytest_cache/

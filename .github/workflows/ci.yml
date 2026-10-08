@@ -42,8 +42,13 @@ jobs:
           do
 
             test -f services/$service/app.py
+            test -f services/$service/routes.py
+            test -f services/$service/repository.py
 
           done
+
+          test -f services/operations-api/telemetry.py
+          test -f scripts/smoke-orders.sh
 
           echo "Architecture contract OK"
 
@@ -167,6 +172,7 @@ jobs:
         run: |
 
           bash scripts/smoke.sh
+          bash scripts/smoke-orders.sh
 
 
       - name: Start observability control plane
