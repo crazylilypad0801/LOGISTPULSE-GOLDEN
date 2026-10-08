@@ -209,9 +209,8 @@ services:
       KAFKA_BOOTSTRAP: redpanda:9092
 
     depends_on:
-      postgres:
+      fulfillment-api:
         condition: service_healthy
-
       redpanda:
         condition: service_started
 

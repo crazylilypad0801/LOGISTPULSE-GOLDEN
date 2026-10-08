@@ -13,8 +13,14 @@ Nginx Edge / Interactive Console :8080
       |          |
       |        MQTT <--- Telemetry Simulator
       +--> Fulfillment API ----> PostgreSQL fulfillment_db
-                 |
-              Redpanda ---> Fulfillment Worker
+                 |                         |
+                 |                  Transactional outbox
+                 |                         |
+                 +--------------------> Fulfillment Worker
+                                            |
+                                         Redpanda
+
+The fulfillment worker publishes pending outbox records to Redpanda and consumes the resulting order events before advancing their status.
 
 All APIs ---> Prometheus ---> Grafana
 Docker ----> cAdvisor ------> Prometheus
